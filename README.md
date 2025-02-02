@@ -20,9 +20,10 @@ In this project, we aim to develop a causal machine learning framework for optim
 
 We will use two datasets for this project:
 
-- Online Advertisement Click-Through Rates (Mendeley Data): Contains user demographics, ad types, and click behavior, helping to analyze engagement patterns.
+- Online Advertisement Click-Through Rates (Mendeley Data): Contains user demographics, ad types, and click behavior, helping to analyze engagement patterns. [Mendeley Data Online Advertisement Click-Through Rates](https://data.mendeley.com/datasets/wrvjmdtjd9/1)
 
 - Criteo Conversion Logs Dataset: Tracks user conversions after seeing ads, making it useful for measuring true ad impact.
+[Criteo Conversion Logs Dataset](https://ailab.criteo.com/criteo-sponsored-search-conversion-log-dataset/)
 
 ### Key Techniques & Methods
 
