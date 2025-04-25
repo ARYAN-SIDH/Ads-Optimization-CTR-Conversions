@@ -1,24 +1,16 @@
-from imports import pd, LabelEncoder, StandardScaler
+from imports import *
 
-df_demo = pd.read_csv("Demographic.csv")
+def load_and_preprocess(file_path):
+    df = pd.read_csv(file_path)
+    df_original = df.copy()
+    label_encoder = LabelEncoder()
+    df['Gender'] = label_encoder.fit_transform(df['Gender'])
 
-# Convert Click Time to datetime format
-df_demo['Click Time'] = pd.to_datetime(df_demo['Click Time'])
-# Encode Gender (Binary: Male/Female/Other) using Label Encoding
-label_encoder = LabelEncoder()
-df_demo['Gender'] = label_encoder.fit_transform(df_demo['Gender'])
+    categorical_columns = ['Location', 'Ad Type', 'Ad Topic', 'Ad Placement']
+    df = pd.get_dummies(df, columns=categorical_columns, drop_first=True)
 
-# One-Hot Encoding for categorical variables
-categorical_columns = ['Location', 'Ad Type', 'Ad Topic', 'Ad Placement']
-df_demo = pd.get_dummies(df_demo, columns=categorical_columns, drop_first=True)
+    scaler = StandardScaler()
+    numerical_columns = ['Age', 'Income', 'Clicks', 'CTR', 'Conversion Rate']
+    df[numerical_columns] = scaler.fit_transform(df[numerical_columns])
 
-# Standardize numerical features
-scaler = StandardScaler()
-numerical_columns = ['Age', 'Income', 'Clicks', 'CTR', 'Conversion Rate']
-df_demo[numerical_columns] = scaler.fit_transform(df_demo[numerical_columns])
-df_demo['Clicks'] = df_demo['Clicks'].apply(lambda x: max(x, 0))
-
-# Apply standardization
-scaler = StandardScaler()
-numerical_columns = ['Age', 'Income', 'Clicks', 'CTR', 'Conversion Rate']
-df_demo[numerical_columns] = scaler.fit_transform(df_demo[numerical_columns])
+    return df, df_original
