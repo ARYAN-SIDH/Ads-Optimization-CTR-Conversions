@@ -130,3 +130,23 @@ Visit `/admin` in the browser to access:
 - 🧪 Postman was used to test API endpoints in bulk and inject test data.
 - 🌍 GeoIP2 API is used to enrich click logs with city, state, and country data based on IP.
 - 🔄 Frontend calls backend using `axios.post()` and `axios.get()` in `useEffect`.
+
+---
+
+### Note:
+To handle the large video file in your GitHub repository without committing it (since it exceeds the 100MB limit), here’s how you can document it in your `README.md` file:
+
+---
+
+**Video Advertisement File**
+
+The `video.mp4` file used in this project exceeds GitHub's 100MB file size limit and is **not included in this repository**.
+
+📦 **Download it separately from the link below and place it in:**
+
+```
+React-Frontend-Code/public/video.mp4
+```
+
+🔗 **Download video here:**  
+[Click on this if you want this video](https://tinyurl.com/44h3b6kv)
