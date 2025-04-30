@@ -1,0 +1,25 @@
+ad-banner {
+    margin: 2rem 0;
+  }
+  
+  .ad-container {
+    display: flex;
+    justify-content: center;
+    gap: 3.5rem;
+    flex-wrap: wrap;
+  }
+  
+  .ad-container img {
+    display: block;
+    height: auto;
+    width: auto;
+    max-height: 380px;
+    max-width: 150%;
+    margin-bottom: 3%;
+  }
+  
+  
+  .ad-container img:hover {
+    transform: scale(1.05);
+  }
+  
